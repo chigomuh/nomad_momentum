@@ -4,77 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>PaintJS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+      rel="stylesheet"
+    />
+    <title>Momentum</title>
   </head>
   <body>
-    <canvas
-      id="jsCanvas"
-      class="canvas"
-      style="width: 530px; height: 530px"
-    ></canvas>
-    <div class="controls">
-      <div class="controls_range">
-        <input class="jsText" type="text" readonly value="WIDTH" />
+    <div id="momentum">
+      <form class="hidden" id="login-form">
         <input
-          type="range"
-          id="jsRange"
-          min="0.1"
-          max="9.9"
-          value="5.0"
-          step="0.1"
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
         />
-        <input class="jsText" type="text" readonly value="SIZE" />
+        <button>Log In</button>
+      </form>
+      <h2 id="clock"></h2>
+      <div class="clock-style" id="clock-base">
+        <div class="num-style">
+          <div id="circle"></div>
+        </div>
+        <div class="point"></div>
+        <div class="hour" id="hour">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <div class="minute" id="minute">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <div class="second" id="second">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+      </div>
+      <h1 id="greeting" class="hidden"></h1>
+      <ul id="todo-list"></ul>
+      <form id="todo-form">
         <input
-          type="range"
-          id="jsSize"
-          min="300"
-          max="800"
-          value="550"
-          step="5"
+          id="todo-text"
+          type="text"
+          placeholder="오늘 뭐할 거야?"
+          required
         />
+        <button id="submit">✔</button>
+        <button id="delete">❌</button>
+      </form>
+      <div id="quote">
+        <span></span>
+        <span></span>
       </div>
-      <div class="controls_btns">
-        <button id="jsMode">Fill</button>
-        <button id="jsSave">Save</button>
-        <button id="jsReset">Reset</button>
-      </div>
-      <div class="controls_colors" id="jsColors">
-        <div
-          class="controls_color jsColor"
-          style="background-color: black"
-        ></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: white"
-        ></div>
-        <div class="controls_color jsColor" style="background-color: red"></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: orange"
-        ></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: yellow"
-        ></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: forestgreen"
-        ></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: skyblue"
-        ></div>
-        <div
-          class="controls_color jsColor"
-          style="background-color: blue"
-        ></div>
-        <div
-          id="jsEraser"
-          style="background-image: url('image/eraser_up.png')"
-        ></div>
+      <div id="weather">
+        <span></span>
+        <span></span>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/key.js"></script>
+    <script src="js/clockstyle.js"></script>
   </body>
 </html>

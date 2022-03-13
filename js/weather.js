@@ -13,7 +13,8 @@ function onGeoOk(position) {
 }
 
 function onGeoError() {
-  alert("위치 확인 실패😥");
+  const weatherError = document.querySelector("#weather span:first-child");
+  weatherError.innerText = "위치 확인 실패😥";
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
