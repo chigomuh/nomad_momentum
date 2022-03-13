@@ -1,0 +1,96 @@
+@import "reset.css";
+body {
+  background-color: #f38181;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /*flex는 가로로 정렬하는데 높이를 유동적으로 조절함*/
+  display: flex;
+  /*flex-direction은 flex 컨테이너 내 아이템을 배치할 방향 지정
+  column, row, row-reverse 등 */
+  flex-direction: column;
+  /*align-items -> 그리드 영역 내 배치 방법 stretch, center, start, end*/
+  align-items: center;
+  padding-top: 30px;
+  padding: 50px 0px;
+}
+
+.controls {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls_btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: #eaffd0;
+  padding: 5px 0px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.controls_btns button:active {
+  transform: scale(0.98);
+}
+
+.controls .controls_btns {
+  margin-bottom: 15px;
+}
+.canvas {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  float: left;
+}
+
+.controls .controls_colors {
+  display: flex;
+}
+
+.controls_colors .controls_color {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 5px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls .controls_range {
+  margin-bottom: 20px;
+}
+#jsRange {
+  cursor: pointer;
+}
+
+#jsEraser {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin-top: 4px;
+  margin-left: 5px;
+  background-size: 100%, 100%;
+  background-image: url("image/eraser_up.png");
+}
+
+.jsText {
+  all: unset;
+  background-color: #fce38a;
+  padding: 5px 0px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}

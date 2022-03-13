@@ -4,39 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Momentum</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>PaintJS</title>
   </head>
   <body>
-    <form class="hidden" id="login-form">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <button>Log In</button>
-    </form>
-    <h2 id="clock"></h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
+    <canvas
+      id="jsCanvas"
+      class="canvas"
+      style="width: 530px; height: 530px"
+    ></canvas>
+    <div class="controls">
+      <div class="controls_range">
+        <input class="jsText" type="text" readonly value="WIDTH" />
+        <input
+          type="range"
+          id="jsRange"
+          min="0.1"
+          max="9.9"
+          value="5.0"
+          step="0.1"
+        />
+        <input class="jsText" type="text" readonly value="SIZE" />
+        <input
+          type="range"
+          id="jsSize"
+          min="300"
+          max="800"
+          value="550"
+          step="5"
+        />
+      </div>
+      <div class="controls_btns">
+        <button id="jsMode">Fill</button>
+        <button id="jsSave">Save</button>
+        <button id="jsReset">Reset</button>
+      </div>
+      <div class="controls_colors" id="jsColors">
+        <div
+          class="controls_color jsColor"
+          style="background-color: black"
+        ></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: white"
+        ></div>
+        <div class="controls_color jsColor" style="background-color: red"></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: orange"
+        ></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: yellow"
+        ></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: forestgreen"
+        ></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: skyblue"
+        ></div>
+        <div
+          class="controls_color jsColor"
+          style="background-color: blue"
+        ></div>
+        <div
+          id="jsEraser"
+          style="background-image: url('image/eraser_up.png')"
+        ></div>
+      </div>
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
-    <script src="js/greeting.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/weather.js"></script>
-    <script src="js/key.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
