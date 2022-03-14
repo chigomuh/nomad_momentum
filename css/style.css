@@ -42,6 +42,11 @@ body {
   top: 0%;
   width: 100px;
   height: 150px;
+}
+
+.weather-span {
+  width: 150px;
+  height: 130px;
   background-size: contain;
   display: block;
 }
