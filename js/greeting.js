@@ -23,6 +23,7 @@
 const loginInput = document.querySelector("#login-form input");
 const loginForm = document.querySelector("#login-form");
 const greeting = document.querySelector("#greeting");
+const toDoFormHide = document.querySelector("#todo-form");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
@@ -38,12 +39,14 @@ function paintGreetings() {
   const userName = localStorage.getItem(USERNAME_KEY);
   greeting.innerText = `안녕, ${userName} !`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  toDoFormHide.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
 
 if (savedUserName === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
+  toDoFormHide.classList.add(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
   paintGreetings();

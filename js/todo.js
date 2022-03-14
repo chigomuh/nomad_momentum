@@ -24,18 +24,15 @@ function isDoneToDo(event) {
       item.isDone = false;
     }
   }
-  toDos.forEach((item) =>
-    li.id == item.id ? isDone(item) : null
-  );
+  toDos.forEach((item) => (li.id == item.id ? isDone(item) : null));
   saveToDos();
 }
 
 function deleteToDo(event) {
   const li = event.target.parentElement;
-  console.log(li);
-  // li.remove();
-  // toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-  // saveToDos();
+  li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function paintToDo(newToDoObj) {
@@ -45,18 +42,39 @@ function paintToDo(newToDoObj) {
   const span = document.createElement("span");
   span.innerText = newToDoObj.text;
   const btn = document.createElement("button");
-  btn.style.display = "none";
   btn.innerText = "❌";
+  btn.classList.add("button");
+  btn.classList.add("hidden");
   btn.addEventListener("click", deleteToDo);
   li.appendChild(span);
   li.appendChild(btn);
   toDoLists.appendChild(li);
 }
 
+let btnHide = true;
+
+function showDelBtn(event) {
+  event.preventDefault();
+  const lis = toDoLists.childNodes;
+  if (btnHide === true) {
+    lis.forEach((item) =>
+      document
+        .getElementById(String(item.id))
+        .lastChild.classList.remove("hidden")
+    );
+    btnHide = false;
+  } else {
+    lis.forEach((item) =>
+      document.getElementById(String(item.id)).lastChild.classList.add("hidden")
+    );
+    btnHide = true;
+  }
+}
+
 function handleToDoSubmit(event) {
   event.preventDefault();
-  const newToDo = toDoInput.value;
-  if (newToDo !== "") {
+  const newToDo = `${toDoInput.value} `;
+  if (newToDo !== " ") {
     toDoInput.value = "";
     const newToDoObj = {
       text: newToDo,
@@ -96,7 +114,7 @@ function handleMouseEnter(event) {
 toDoForm.addEventListener("submit", handleToDoSubmit);
 btnSm.addEventListener("click", handleToDoSubmit);
 btnSm.addEventListener("mouseenter", handleMouseEnter);
-btnDel.addEventListener("click", deleteToDo);
+btnDel.addEventListener("click", showDelBtn);
 btnDel.addEventListener("mouseenter", handleMouseEnter);
 
 check();
